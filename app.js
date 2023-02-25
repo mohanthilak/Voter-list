@@ -40,21 +40,26 @@ async function GetSheet(){
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(cors({
-    origin: ['http://localhost:3000'],
-    methods: ['GET', 'POST'],
-    credentials: true,
-}));
+// app.use(cors({
+//     origin: ['http://localhost:3000'],
+//     methods: ['GET', 'POST'],
+//     credentials: true,
+// }));
+
+app.use("/", (req, res, next)=>{
+    console.log(req.url);
+    next()
+})
 
 
 app.get('/', async (req, res)=>{
     try{
-
+        console.log("fads")
         const sheet = await GetSheet();
         const row = await sheet.addRows([{RollNo: 1, Name: "jo"}, {RollNo:2, Name: "Mo"}])
         const rows = await sheet.getRows();
-        console.log(rows[0].RollNo);
-        return res.status(200).send(list);
+        console.log(rows[0]);
+        return res.status(200).send("list");
     }catch(e){
         console.log("Error while generating list", e);
         return res.status(500).send("server error",e)
@@ -93,6 +98,7 @@ app.post('/upload-list', upload.single("list"), async(req, res) =>{
     // console.log(ConvertImage);
     try{
     const list = await ConvertImage(req.file.path);
+    console.log("@!@!@!@!#$#$#$#$#$", list)
     return res.status(200).json({success: true, message: "List Generated", data: list})
     }catch(e){
         console.log("Error while generating list", e);

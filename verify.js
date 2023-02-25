@@ -339,7 +339,7 @@ function transformTextToList(text){
         //OBJECT-1
         while(text[i] === '\t' || text[i] === '\n')i++;
         Resultattribute = figureOutTheAttribute(text, i);
-        // console.log(Resultattribute);
+        console.log(Resultattribute);
         i = Resultattribute.i;
         if(Resultattribute.success){
             let operation = Resultattribute.attribute;
@@ -388,7 +388,7 @@ function transformTextToList(text){
         //OBJECT-2
         while(text[i] === '\t' || text[i] === '\n')i++;
         Resultattribute = figureOutTheAttribute(text, i);
-        // console.log(Resultattribute);
+        console.log(Resultattribute);
         i = Resultattribute.i;
         if(Resultattribute.success){
             let operation = Resultattribute.attribute;
@@ -437,7 +437,7 @@ function transformTextToList(text){
         //OBJECT-3
         while(text[i] === '\t' || text[i] === '\n')i++;
         Resultattribute = figureOutTheAttribute(text, i);
-        // console.log(Resultattribute);
+        console.log(Resultattribute);
         i = Resultattribute.i;
         if(skip3) while(text[i]!== '\n') i++;
         else{
@@ -486,7 +486,7 @@ function transformTextToList(text){
                 obj3[attribute] = name.concat(" ", Resultattribute.attribute);
             }
         }
-        // console.log(obj1, obj2, obj3)
+        console.log(obj1, obj2, obj3)
         // <------------  HOUSE NUMBER -------->
 
 
@@ -502,7 +502,7 @@ function transformTextToList(text){
             else break;
         }
         Resultattribute = figureOutTheAttribute(text, i);
-        // console.log(Resultattribute);
+        console.log(Resultattribute);
         i = Resultattribute.i;
         if(Resultattribute.success){
             let operation = Resultattribute.attribute;
@@ -566,7 +566,7 @@ function transformTextToList(text){
             name = obj1[attribute];
             obj1[attribute] = name.concat(" ", Resultattribute.attribute);
         }
-        // console.log(obj1, obj2, obj3)
+        console.log(obj1, obj2, obj3)
 
 
 
@@ -588,7 +588,7 @@ function transformTextToList(text){
         } 
         Resultattribute = figureOutTheAttribute(text, i);
         i = Resultattribute.i;
-        // console.log(Resultattribute)
+        console.log(Resultattribute)
         if(Resultattribute.success){
             let operation = Resultattribute.attribute;
             switch(operation){
@@ -632,7 +632,7 @@ function transformTextToList(text){
             name = obj2[attribute];
             obj2[attribute] = name.concat(" ", Resultattribute.attribute);
         }
-        // console.log(obj1, obj2, obj3)
+        console.log(obj1, obj2, obj3)
 
 
 
@@ -657,7 +657,7 @@ function transformTextToList(text){
         } 
         Resultattribute = figureOutTheAttribute(text, i);
         i = Resultattribute.i;
-        // console.log(Resultattribute)
+        console.log(Resultattribute)
         if(Resultattribute.success){
             let operation = Resultattribute.attribute;
             let response;
@@ -703,7 +703,7 @@ function transformTextToList(text){
                 obj3[attribute] = name.concat(" ", Resultattribute.attribute);
             }
         }
-        // console.log(obj1, obj2, obj3)
+        console.log(obj1, obj2, obj3)
         
         // console.log(text.substring(i, i+20))
         while(text[i]!== '\n') i++;
@@ -879,15 +879,20 @@ function transformTextToList(text){
         console.log(text.substring(i, i+15), text.length, i, i+9)
         if(text.substring(i, i+9) === "Available")i+=9
         
-        console.log(obj1, obj2, obj3)
+        console.log(obj1, obj2, obj3, "!@!@disjkfaoijoidsjfoiajsoifdjoijfoiajfoijojj")
         if(!skip1)arr.push(obj1)
         if(!skip2)arr.push(obj2)
         if(!skip3)arr.push(obj3)
         // break;
         // console.log(arr)
+        console.log(text.length, i)
         if(text.length === i)break;
-        while(text[i]!=='\n')i++;
+        console.log(text.length, i, "p")
+        console.log(text.substring(i, i+14))
+        while(i<text.length && text[i]!=='\n')i++;
         i++;
+        console.log(text.length, i)
+        
     }
     console.log(arr, arr.length);
     return arr;
