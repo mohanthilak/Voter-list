@@ -1,8 +1,12 @@
 const Client = require('@veryfi/veryfi-sdk');
-const client_id = 'vrfmpGTaunAKXUytacdhSwJHUp5Ppj5uvnVpT6Z';
-const client_secret = 'tPfCIwz0KhmUydabtym5e8U68PtzMmMEgO0RC0a9063oNSgxkocrHHe3gJAwewKHUPcv5vnvdhU5mP57cLD3wv11UilVGv67My22K2oGNbBgxJWgz78P54BRtSDhEo4A';
-const username = 'mohan.thilak21';
-const api_key = '883a517ae06c25cee1872155e3644629';
+// const client_id = 'vrfmpGTaunAKXUytacdhSwJHUp5Ppj5uvnVpT6Z';
+// const client_secret = 'tPfCIwz0KhmUydabtym5e8U68PtzMmMEgO0RC0a9063oNSgxkocrHHe3gJAwewKHUPcv5vnvdhU5mP57cLD3wv11UilVGv67My22K2oGNbBgxJWgz78P54BRtSDhEo4A';
+// const username = 'mohan.thilak21';
+// const api_key = '883a517ae06c25cee1872155e3644629';
+const client_id = 'vrf60nPt5ntgsTgiUuVliie1YTdnX9sWNSlukaL';
+const client_secret = 'xXzAR4jEHwiJdLCx9EYksB30DeothuMsKMJkXf0FN4y7i1PObN0I8CcXhTmgKmCulYjKWC67sr6L3rPZ0z9VN4wEYF8rDl13nyKkwOfu4TrXXpWspHwt9j9ZUW4j5viW';
+const username = 'talariprince143';
+const api_key = 'f9ce4da95a2f62a5c7c117dd351ea1b5';
 
 const categories = ['Grocery', 'Utilities', 'Travel'];
 const file_path = './lib/images/10.png';
@@ -201,6 +205,18 @@ function transformTextToList(text){
                     i = response.i;
                     break;
                 }
+                case "Others Name":{
+                    response = recordOtherName(text, i, obj1);
+                    obj1=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Mother's Name":{
+                    response = recordMotherName(text, i, obj1);
+                    obj1=response.obj;
+                    i = response.i;
+                    break;
+                }
                 case "House Number": {
                     response = recordHouseNumber(text, i, obj1)
                     obj1 = response.obj;
@@ -259,6 +275,18 @@ function transformTextToList(text){
                     i = response.i;
                     break;
                 }
+                case "Others Name":{
+                    response = recordOtherName(text, i, obj2);
+                    obj2=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Mother's Name":{
+                    response = recordMotherName(text, i, obj2);
+                    obj2=response.obj;
+                    i = response.i;
+                    break;
+                }
                 case "House Number": {
                     response = recordHouseNumber(text, i, obj2)
                     obj2 = response.obj;
@@ -308,6 +336,18 @@ function transformTextToList(text){
                 }
                 case "Wife's Name":{
                     response = recordWifeName(text, i, obj3);
+                    obj3=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Others Name":{
+                    response = recordOtherName(text, i, obj3);
+                    obj3=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Mother's Name":{
+                    response = recordMotherName(text, i, obj3);
                     obj3=response.obj;
                     i = response.i;
                     break;
@@ -366,6 +406,18 @@ function transformTextToList(text){
                     i = response.i;
                     break;
                 }
+                case "Others Name":{
+                    response = recordOtherName(text, i, obj1);
+                    obj1=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Mother's Name":{
+                    response = recordMotherName(text, i, obj1);
+                    obj1=response.obj;
+                    i = response.i;
+                    break;
+                }
                 case "House Number": {
                     response = recordHouseNumber(text, i, obj1)
                     obj1 = response.obj;
@@ -411,6 +463,18 @@ function transformTextToList(text){
                 }
                 case "Wife's Name":{
                     response = recordWifeName(text, i, obj2);
+                    obj2=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Others Name":{
+                    response = recordOtherName(text, i, obj2);
+                    obj2=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Mother's Name":{
+                    response = recordMotherName(text, i, obj2);
                     obj2=response.obj;
                     i = response.i;
                     break;
@@ -463,6 +527,18 @@ function transformTextToList(text){
                 }
                 case "Wife's Name":{
                     response = recordWifeName(text, i, obj3);
+                    obj3=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Others Name":{
+                    response = recordOtherName(text, i, obj3);
+                    obj3=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Mother's Name":{
+                    response = recordMotherName(text, i, obj3);
                     obj3=response.obj;
                     i = response.i;
                     break;
@@ -525,6 +601,18 @@ function transformTextToList(text){
                 }
                 case "Wife's Name":{
                     response = recordWifeName(text, i, obj1);
+                    obj1=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Others Name":{
+                    response = recordOtherName(text, i, obj1);
+                    obj1=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Mother's Name":{
+                    response = recordMotherName(text, i, obj1);
                     obj1=response.obj;
                     i = response.i;
                     break;
@@ -614,6 +702,18 @@ function transformTextToList(text){
                     i = response.i;
                     break;
                 }
+                case "Others Name":{
+                    response = recordOtherName(text, i, obj2);
+                    obj2=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Mother's Name":{
+                    response = recordMotherName(text, i, obj2);
+                    obj2=response.obj;
+                    i = response.i;
+                    break;
+                }
                 case "House Number": {
                     response = recordHouseNumber(text, i, obj2)
                     obj2 = response.obj;
@@ -684,6 +784,18 @@ function transformTextToList(text){
                     i = response.i;
                     break;
                 }
+                case "Others Name":{
+                    response = recordOtherName(text, i, obj1);
+                    obj1=response.obj;
+                    i = response.i;
+                    break;
+                }
+                case "Mother's Name":{
+                    response = recordMotherName(text, i, obj1);
+                    obj1=response.obj;
+                    i = response.i;
+                    break;
+                }
                 case "House Number": {
                     response = recordHouseNumber(text, i, obj3)
                     obj3 = response.obj;
@@ -738,6 +850,18 @@ function transformTextToList(text){
                         i = response.i;
                         break;
                     }
+                    case "Others Name":{
+                        response = recordOtherName(text, i, obj1);
+                        obj1=response.obj;
+                        i = response.i;
+                        break;
+                    }
+                    case "Mother's Name":{
+                        response = recordMotherName(text, i, obj1);
+                        obj1=response.obj;
+                        i = response.i;
+                        break;
+                    }
                     case "House Number": {
                         response = recordHouseNumber(text, i, obj1)
                         obj1 = response.obj;
@@ -788,6 +912,18 @@ function transformTextToList(text){
                     }
                     case "Wife's Name":{
                         response = recordWifeName(text, i, obj2);
+                        obj2=response.obj;
+                        i = response.i;
+                        break;
+                    }
+                    case "Others Name":{
+                        response = recordOtherName(text, i, obj2);
+                        obj2=response.obj;
+                        i = response.i;
+                        break;
+                    }
+                    case "Mother's Name":{
+                        response = recordMotherName(text, i, obj2);
                         obj2=response.obj;
                         i = response.i;
                         break;
@@ -847,6 +983,18 @@ function transformTextToList(text){
                     }
                     case "Wife's Name":{
                         response = recordWifeName(text, i, obj3);
+                        obj3=response.obj;
+                        i = response.i;
+                        break;
+                    }
+                    case "Others Name":{
+                        response = recordOtherName(text, i, obj3);
+                        obj3=response.obj;
+                        i = response.i;
+                        break;
+                    }
+                    case "Mother's Name":{
+                        response = recordMotherName(text, i, obj3);
                         obj3=response.obj;
                         i = response.i;
                         break;
@@ -912,7 +1060,7 @@ function figureOutTheAttribute(text, i){
         attribute += text[i];
         i++;
     }
-
+    console.log("********************************************", attribute);
     switch(attribute){
         case "Husband's Name": {
             i+=2;
@@ -923,16 +1071,26 @@ function figureOutTheAttribute(text, i){
             i+=2;
             return {success: true, attribute: "Father's Name", i};
          }
-         case "Wife's Name": {
-            //  i += 15;
-            i+=2;
-            return {success: true, attribute: "Wife's Name", i};
-         }
+        case "Wife's Name": {
+        //  i += 15;
+        i+=2;
+        return {success: true, attribute: "Wife's Name", i};
+        }
+        case "Mother's Name": {
+        //  i += 15;
+        i+=2;
+        return {success: true, attribute: "Mother's Name", i};
+        }
+        case "Others Name": {
+        //  i += 15;
+        i+=2;
+        return {success: true, attribute: "Others's Name", i};
+        }
         case "House Number": {
             // i += 14;
             i+=2;
             return {success: true, attribute: "House Number", i};
-         }
+        }
         case "Age": {
             // i += 6;
             i+=2;
@@ -1000,6 +1158,31 @@ function recordFatherName(text, i, obj){
         i++;
     }
     obj.fathersName = name;
+    return {obj, i}
+}
+
+function recordMotherName(text, i, obj){
+    console.log("&&&&&&&&&&&&")
+    let name = '';
+    while(true){
+        if(text[i] ==='\t')break
+        if(text[i] ==='\n')break
+        name += text[i];
+        i++;
+    }
+    obj.mothersName = name;
+    return {obj, i}
+}
+
+function recordOtherName(text, i, obj){
+    let name = '';
+    while(true){
+        if(text[i] ==='\t')break
+        if(text[i] ==='\n')break
+        name += text[i];
+        i++;
+    }
+    obj.othersName = name;
     return {obj, i}
 }
 
